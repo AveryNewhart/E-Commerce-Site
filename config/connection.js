@@ -1,6 +1,6 @@
-require('dotenv').config();
+require('dotenv').config(); // requires / gets dotenv for us to use.
 
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize'); // requiring and getting sequelize for us to use.
 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
