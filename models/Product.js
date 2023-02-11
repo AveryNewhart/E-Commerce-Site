@@ -10,33 +10,33 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+    id: { // column name is id
+      type: DataTypes.INTEGER, // data will be an integer
+      allowNull: false, // will not accept null values
+      primaryKey: true, // is the primary key
+      autoIncrement: true, // it will auto increment 
     },
-    product_name: {
-      type: DataTypes.STRING,
+    product_name: { // column name
+      type: DataTypes.STRING, // data will be a string
     },
-    price: {
-      type: DataTypes.DECIMAL,
+    price: { // column name
+      type: DataTypes.DECIMAL, // data will be a decimal
       allowNull: false,
-      validate: {
+      validate: { // checking to see if it is a decimal
         isDecimal: true
       }
     },
-    stock: {
+    stock: { // column name
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 10,
-      validate: {
+      defaultValue: 10, // setting the default value for it to start at.
+      validate: { // checking to see if entry is a number
         isNumeric: true
       },
     },
-    category_id: {
+    category_id: { // column name, this will be used as a foreign key in the index.js model file.
       type: DataTypes.INTEGER,
-      references: {
+      references: { // refering to the Category model and getting the column name of id 
         model: 'category',
         key: 'id',
       },

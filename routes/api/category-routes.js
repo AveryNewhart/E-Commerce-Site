@@ -7,12 +7,12 @@ router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
   try {
-    const categoryData = Category.findAll({
-      include: [{ model: Product }],
+    const categoryData = Category.findAll({ // going to Category and finding all of the data.
+      include: [{ model: Product }], // including the Product model.
     });
-    res.status(200).json(categoryData);
+    res.status(200).json(categoryData); // if it works
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err); // if it doesn't work itll show an error
   }
 });
 
@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try {
-    const categoryData = Category.findByPk(req.params.id, {
+    const categoryData = Category.findByPk(req.params.id, { // finding a category by itd id.
       include: [{ model: Product }],
     }); 
 
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new category
   try {
-    const categoryData =  Category.create({
+    const categoryData =  Category.create({ // creating a new category
       category_name: req.body.category_name
     });
     return res.json(categoryData)
@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
   try {
-    const categoryData = Category.update(req.body, {
+    const categoryData = Category.update(req.body, { // selecting a category based off the id and updating it.
       where: {
         id: req.params.id,
       },
@@ -68,7 +68,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   try {
-    const categoryData = Category.destroy({
+    const categoryData = Category.destroy({ // selecting a category based off the id and deleting it.
       where: {
         id: req.params.id
       }

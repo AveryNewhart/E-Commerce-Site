@@ -7,22 +7,22 @@ class ProductTag extends Model {}
 ProductTag.init(
   {
     // define columns
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+    id: { // column name
+      type: DataTypes.INTEGER, // data is an integer
+      allowNull: false, // doesn't accept null values
+      primaryKey: true, // is the primary key
+      autoIncrement: true, // allows auto increment 
     },
-    product_id: {
+    product_id: { // column name, that will be used as a foreign key in the index.js model file
       type: DataTypes.INTEGER,
-      references: {
+      references: { // refering to the Product model and getting the id column to be the key.
         model: 'product',
         key: 'id',
       },
     },
-    tag_id: {
+    tag_id: { // column name, that will be used as a foreign key in the index.js model file
       type: DataTypes.INTEGER,
-      references: {
+      references: { // refering to the Product model and getting the id column to be the key.
         model: 'tag',
         key: 'id',
       },
