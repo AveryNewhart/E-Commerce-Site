@@ -17,7 +17,8 @@
 
   ## Usage
   - Must seed the database to see it by running npm run seed, then start the server by npm start.
-  - (insert link)
+  - ([ecommercevideo.webm](https://user-images.githubusercontent.com/113143631/218281426-59a071b6-0801-41e3-95c7-6ddb45727a50.webm))
+
 
   ## License
   - license : MIT License ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
